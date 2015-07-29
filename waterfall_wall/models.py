@@ -15,10 +15,9 @@ from django.db import models
 class Feed(models.Model):
     id = models.BigIntegerField(primary_key=True)
     article_id = models.BigIntegerField(unique=True)
-    article_json = models.TextField()  # This field type is a guess.
+    article_json = django_pgjsonb.JSONField()
 
     class Meta:
-        managed = False
         db_table = 'feed'
 
 
@@ -30,6 +29,5 @@ class Image(models.Model):
     name = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'image'
         unique_together = (('article_id', 'url'),)
