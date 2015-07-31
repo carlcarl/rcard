@@ -10,6 +10,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+import django_pgjsonb
 
 
 class Feed(models.Model):
@@ -30,4 +31,4 @@ class Image(models.Model):
 
     class Meta:
         db_table = 'image'
-        unique_together = (('article_id', 'url'),)
+        unique_together = (('url', 'article'),)
