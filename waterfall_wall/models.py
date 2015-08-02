@@ -25,9 +25,8 @@ class Feed(models.Model):
 class Image(models.Model):
     article = models.ForeignKey(Feed, blank=True, null=True)
     url = models.TextField()
-    path = models.TextField(blank=True, null=True)
     nude_percent = models.IntegerField(blank=True, null=True)
-    name = models.TextField(blank=True, null=True)
+    path = models.ImageField(null=True)
 
     class Meta:
         db_table = 'image'
