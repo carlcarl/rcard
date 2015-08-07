@@ -14,7 +14,7 @@ import django_pgjsonb
 
 
 class Feed(models.Model):
-    id = models.BigIntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     article_id = models.BigIntegerField(unique=True)
     article_json = django_pgjsonb.JSONField()
 
@@ -23,6 +23,7 @@ class Feed(models.Model):
 
 
 class Image(models.Model):
+    id = models.AutoField(primary_key=True)
     article = models.ForeignKey(Feed, blank=True, null=True)
     url = models.TextField()
     nude_percent = models.IntegerField(blank=True, null=True)
