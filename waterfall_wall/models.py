@@ -24,11 +24,11 @@ class Feed(models.Model):
 
 class Image(models.Model):
     id = models.AutoField(primary_key=True)
-    article = models.ForeignKey(Feed, blank=True, null=True)
+    feed = models.ForeignKey(Feed, blank=True, null=True)
     url = models.TextField()
     nude_percent = models.IntegerField(blank=True, null=True)
     path = models.ImageField(null=True)
 
     class Meta:
         db_table = 'image'
-        unique_together = (('url', 'article'),)
+        unique_together = (('url', 'feed'),)
