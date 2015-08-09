@@ -11,4 +11,4 @@ class ImageSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Image
-        fields = ('url', 'nude_percent')
+        fields = ('id', 'url', 'nude_percent')
