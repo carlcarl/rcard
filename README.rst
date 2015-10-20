@@ -21,7 +21,7 @@ necessary requirements::
 Then create a local settings file and set your ``DJANGO_SETTINGS_MODULE`` to use it::
 
     cp rcard/settings/local.example.py rcard/settings/local.py
-    echo "export DJANGO_SETTINGS_MODULE=rcard.settings.local" >> $VIRTUAL_ENV/bin/postactivate
+    echo "export DJANGO_SETTINGS_MODULE=rcard.settings.local" >> $VIRTUAL_ENV/bin/activate
     echo "unset DJANGO_SETTINGS_MODULE" >> $VIRTUAL_ENV/bin/postdeactivate
 
 Exit the virtualenv and reactivate it to activate the settings just changed::
